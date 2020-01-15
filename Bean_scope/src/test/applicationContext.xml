@@ -5,10 +5,10 @@
        xsi:schemaLocation="
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<!--    <bean id="hello" class="test.Hello">
+    <bean id="hello" class="test.Hello">
         
-    </bean>-->
-    <bean id="address1" class="dependencyInjection.Address">
+    </bean>
+<!--    <bean id="address1" class="dependencyInjection.Address">
         <constructor-arg value="Mohammadpur"></constructor-arg>
         <constructor-arg value="Dhaka"></constructor-arg>
         <constructor-arg value="Bangladesh"></constructor-arg>
@@ -33,6 +33,6 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
                 <ref bean="address2" ></ref>
             </list>
         </property>
-    </bean>
+    </bean>-->
 </beans>
 
