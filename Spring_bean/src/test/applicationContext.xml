@@ -21,10 +21,18 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
     </bean>
     
     <bean id="e" class="dependencyInjection.Employee" >
-        <property name="address1" ref="address1"></property>
+        <property name="address1">
+            <list>
+                <ref bean="address1" ></ref>
+            </list>
+        </property>
     </bean>
     <bean id="e2" class="dependencyInjection.Employee" parent="e">
-        <property name="address2" ref="address2"></property>
+        <property name="address1">
+             <list merge="true">
+                <ref bean="address2" ></ref>
+            </list>
+        </property>
     </bean>
 </beans>
 
