@@ -12,5 +12,10 @@ public class Hello {
     public void setMessage(String message) {
         this.message = message;
     }
-    
+    public void init(){
+        System.out.println("before initializing bean");
+    }
+    public void destroy(){
+        System.out.println("before destroing bean");
+    }
 }
