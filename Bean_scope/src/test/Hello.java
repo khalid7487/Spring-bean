@@ -1,8 +1,10 @@
-
 package test;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class Hello {
+public class Hello implements InitializingBean, DisposableBean {
+
     private String message;
 
     public String getMessage() {
@@ -13,9 +15,19 @@ public class Hello {
         this.message = message;
     }
     public void init(){
+        System.out.println("before initializing bean-1");
+    }
+    public void clear(){
+        System.out.println("before destroing bean-1");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
         System.out.println("before initializing bean");
     }
-    public void destroy(){
+
+    @Override
+    public void destroy() throws Exception {
         System.out.println("before destroing bean");
     }
 }
