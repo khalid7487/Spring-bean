@@ -48,9 +48,9 @@
             </list>
         </property>
     </bean>-->
-<!--    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="test/address.properties"></property>
-    </bean>-->
+    </bean>
     
 </beans>
 
