@@ -2,6 +2,8 @@ package dependencyInjection;
 
 import java.util.Iterator;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
@@ -10,18 +12,20 @@ import org.springframework.beans.factory.annotation.Required;
  */
 public class Employee {
 
-    private Address address1;
+    private Address address;
 
-    public Address getAddress1() {
-        return address1;
+    public Address getAddress() {
+        return address;
     }
-    @Required
-    public void setAddress1(Address address1) {
-        this.address1 = address1;
+    @Autowired
+    @Qualifier("addqualifire")
+    
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public void show() {
-        System.out.println(address1.toString());
+        System.out.println(address.toString());
     }
 
 }
