@@ -30,12 +30,13 @@
     </bean>
     
     <context:annotation-config/>
-    
+    <context:component-scan base-package="dependencyInjection"/>
+<!--    
     <bean id="e" class="dependencyInjection.Employee" >
-<!--        <property name="address1">
+        <property name="address1">
             <ref bean="address1"></ref>
-        </property>-->
-    </bean>
+        </property>
+    </bean>-->
 <!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" >
     </bean>-->
 <!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" >

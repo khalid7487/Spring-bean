@@ -16,7 +16,7 @@ public class TestEmp {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("test/applicationContext.xml");
-        Employee emp = (Employee) context.getBean("e");
+        Employee emp = (Employee) context.getBean(Employee.class);
         emp.show();
     }
 }
