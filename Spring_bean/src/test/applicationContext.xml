@@ -9,9 +9,10 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         
     </bean>-->
     <bean id="address1" class="dependencyInjection.Address">
-        <constructor-arg value="Mohammadpur"></constructor-arg>
-        <constructor-arg value="Dhaka"></constructor-arg>
-        <constructor-arg value="Bangladesh"></constructor-arg>
+        <constructor-arg value="${address.state}"></constructor-arg>
+        <constructor-arg value="${address.city}"></constructor-arg>
+        <constructor-arg value="${address.country}"></constructor-arg>
+ 
     </bean>
     
     <bean id="address2" class="dependencyInjection.Address">
@@ -20,19 +21,24 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
         <constructor-arg value="Bangladesh 1"></constructor-arg>
     </bean>
     
-    <bean id="e" class="dependencyInjection.Employee" abstract="true" >
+    <bean id="e" class="dependencyInjection.Employee" >
         <property name="address1">
-            <list>
-                <ref bean="address1" ></ref>
-            </list>
+            <ref bean="address1"></ref>
         </property>
     </bean>
-    <bean id="e2" class="dependencyInjection.Employee" parent="e">
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" >
+        
+    </bean>
+<!--    <bean id="e2" class="dependencyInjection.Employee" parent="e">
         <property name="address1">
              <list merge="true">
                 <ref bean="address2" ></ref>
             </list>
         </property>
+    </bean>-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="test/address.properties"></property>
     </bean>
+    
 </beans>
 
